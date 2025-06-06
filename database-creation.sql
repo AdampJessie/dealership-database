@@ -8,7 +8,7 @@ CREATE DATABASE dealership;
 USE dealership;
 
 -- -- -- -- -- -- ---- -- -- -- -- -- --
--- 			Deleting tables           --
+--           Deleting tables          --
 -- -- -- -- -- -- ---- -- -- -- -- -- --
 
 DROP TABLE sales_contracts;
@@ -18,7 +18,7 @@ DROP TABLE vehicles;
 DROP TABLE dealerships;
 
 -- -- -- -- -- -- ---- -- -- -- -- -- --
--- 			Creating tables           --
+--          Creating tables           --
 -- -- -- -- -- -- ---- -- -- -- -- -- --
 
 CREATE TABLE vehicles (
@@ -73,7 +73,7 @@ CREATE TABLE inventory (
   FOREIGN KEY (VIN) REFERENCES vehicles(VIN)
 );
 -- -- -- -- -- -- ---- -- -- -- -- -- --
--- 		Inserting sample data         --
+--         Inserting sample data      --
 -- -- -- -- -- -- ---- -- -- -- -- -- --
 
 INSERT INTO vehicles (VIN, make, model, vehicle_year, SOLD, color, vehicle_type, odometer, price)
