@@ -26,7 +26,9 @@ Follow these steps to get your database running within MySQL Workbench:
 
 ## Team Members
 
-- **Adam Jessie** - Everything!
+- **Adam Jessie** - (Almost) Everything!
+- **Raymond Maroun** - Database Layout
+
 
 ## Thanks
 
