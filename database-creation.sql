@@ -2,7 +2,7 @@
 -- Clearing > Creating > Using Database  --
 -- -- -- -- -- -- -- ---- -- -- -- -- -- --
 
-DROP DATABASE if exists dealership;
+DROP DATABASE IF EXISTS dealership;
 CREATE DATABASE dealership;
 
 USE dealership;
@@ -11,17 +11,17 @@ USE dealership;
 --           Deleting tables          --
 -- -- -- -- -- -- ---- -- -- -- -- -- --
 
-DROP TABLE sales_contracts;
-DROP TABLE lease_contracts;
-DROP TABLE inventory;
-DROP TABLE vehicles;
-DROP TABLE dealerships;
+DROP TABLE IF EXISTS sales_contracts;
+DROP TABLE IF EXISTS lease_contracts;
+DROP TABLE IF EXISTS inventory;
+DROP TABLE IF EXISTS vehicles;
+DROP TABLE IF EXISTS dealerships;
 
 -- -- -- -- -- -- ---- -- -- -- -- -- --
 --          Creating tables           --
 -- -- -- -- -- -- ---- -- -- -- -- -- --
 
-CREATE TABLE vehicles (
+CREATE TABLE vehicles(
   VIN varchar(17),
   make varchar(50) NOT NULL,
   model varchar(50) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE vehicles (
   PRIMARY KEY (VIN)
 );
 
-CREATE TABLE lease_contracts (
+CREATE TABLE sales_contracts(
   contract_id int AUTO_INCREMENT,
   VIN varchar(17) NOT NULL,
   sale_date date NOT NULL,
@@ -45,7 +45,7 @@ CREATE TABLE lease_contracts (
   FOREIGN KEY (VIN) REFERENCES vehicles(VIN)
 );
 
-CREATE TABLE sales_contracts (
+CREATE TABLE lease_contracts(
   contract_id int AUTO_INCREMENT,
   VIN varchar(17) NOT NULL,
   lease_start date NOT NULL,
@@ -56,7 +56,7 @@ CREATE TABLE sales_contracts (
   FOREIGN KEY (VIN) REFERENCES vehicles(VIN)
 );
 
-CREATE TABLE dealerships (
+CREATE TABLE dealerships(
   dealership_id int AUTO_INCREMENT,
   dealership_name varchar(50) NOT NULL,
   address varchar(50) NOT NULL,
@@ -102,8 +102,26 @@ VALUES ("BAH HUMBUG!", "321 Tickety St, Brighttown, FL 30415", "123-456-7890");
 -- -- -- -- -- -- ---- -- -- -- -- -- --
 
 INSERT INTO sales_contracts (VIN, sale_date, price)
-VALUES ("44901", 2020-01-01, 6995.00);
+VALUES ("44901", '2020-01-01', 6995.00);
 
-INSERT INTO lease_contracts (VIN, lease_start, lease_end, price)
-VALUES ("37846", 2020-01-01, 2020-12-01 , 139.65);
+INSERT INTO lease_contracts (VIN, lease_start, lease_end, monthly_payment)
+VALUES ("37846", '2020-01-01', '2020-12-01' , 139.65);
+
+-- -- -- -- -- -- ---- -- -- -- -- -- --
+
+INSERT INTO inventory (dealership_id, VIN)
+VALUES (1, 10112);
+
+INSERT INTO inventory (dealership_id, VIN)
+VALUES (1, 11110);
+
+INSERT INTO inventory (dealership_id, VIN)
+VALUES (2, 11111);
+
+INSERT INTO inventory (dealership_id, VIN)
+VALUES (2, 37846);
+
+INSERT INTO inventory (dealership_id, VIN)
+VALUES (2, 44901);
+
 
