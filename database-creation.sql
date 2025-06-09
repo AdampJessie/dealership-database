@@ -77,13 +77,19 @@ CREATE TABLE inventory (
 -- -- -- -- -- -- ---- -- -- -- -- -- --
 
 INSERT INTO vehicles (VIN, make, model, vehicle_year, SOLD, color, vehicle_type, odometer, price)
+VALUES ("10112", "Ford", "Explorer", 1993, FALSE, "Red", "SUV", 525123, 995.00);
+
+INSERT INTO vehicles (VIN, make, model, vehicle_year, SOLD, color, vehicle_type, odometer, price)
+VALUES ("37846", "Ford", "Ranger", 2001, TRUE, "Yellow", "Truck", 172544, 1995.00);
+
+INSERT INTO vehicles (VIN, make, model, vehicle_year, SOLD, color, vehicle_type, odometer, price)
+VALUES ("44901", "Honda", "Civic", 2012, TRUE, "Gray", "SUV", 103221, 6995.00);
+
+INSERT INTO vehicles (VIN, make, model, vehicle_year, SOLD, color, vehicle_type, odometer, price)
 VALUES ("11111", "Dodge", "Charger", 2007, FALSE, "Black", "Muscle", 50000, 4000.00);
 
 INSERT INTO vehicles (VIN, make, model, vehicle_year, SOLD, color, vehicle_type, odometer, price)
-VALUES ("11110", "Dodge", "Challenger", 2009, TRUE, "Red", "Muscle", 30000, 6000.00);
-
-INSERT INTO vehicles (VIN, make, model, vehicle_year, SOLD, color, vehicle_type, odometer, price)
-VALUES ("11101", "Chevy", "Trailblazer", 1999, TRUE, "Gray", "SUV", 100000, 3000.00);
+VALUES ("11110", "Dodge", "Challenger", 2009, FALSE, "Red", "Muscle", 30000, 6000.00);
 
 -- -- -- -- -- -- ---- -- -- -- -- -- --
 
@@ -96,7 +102,8 @@ VALUES ("BAH HUMBUG!", "321 Tickety St, Brighttown, FL 30415", "123-456-7890");
 -- -- -- -- -- -- ---- -- -- -- -- -- --
 
 INSERT INTO sales_contracts (VIN, sale_date, price)
-VALUES ("11101", 2020-01-01, 4000.00);
+VALUES ("44901", 2020-01-01, 6995.00);
 
-INSERT INTO sales_contracts (VIN, lease_start, lease_end, price)
-VALUES ("11110", , , "");
+INSERT INTO lease_contracts (VIN, lease_start, lease_end, price)
+VALUES ("37846", 2020-01-01, 2020-12-01 , 139.65);
+
